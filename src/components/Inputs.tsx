@@ -1,11 +1,16 @@
 import React from "react"
+import { useState } from "react"
+import { PdfProps } from 'myTypes';
 
-export default function Inputs() {
+export default function Inputs(props: PdfProps) {
+    const [nameInput, setNameInput] = useState('');
 
+        props.pdf.setNameInput = setNameInput || ''
+        props.pdf.nameInput = nameInput || ''
     return (
         <div className="min-w-full min-h-full flex">
             <section className="w-3/5 flex flex-col">
-                <Name />
+            <Name pdf={props.pdf.nameInput} />
                 <Title />
                 <Summary />
             </section>
@@ -16,12 +21,16 @@ export default function Inputs() {
     )
 }
 
-function Name() {
-
+function Name(props: PdfProps) {
     return (
-        <input type="text" placeholder="Name" className="input input-bordered input-primary w-full max-w-xs m-5" />
-    )
-
+        <input 
+            type="text" 
+            placeholder="Name" 
+            value={props.pdf.nameInput || ''}
+            onChange={e => props.pdf.setNameInput && props.pdf.setNameInput(e.target.value)} 
+            className="input input-bordered input-primary w-full max-w-xs m-5" 
+        />
+    );
 }
 
 function Title() {
@@ -41,10 +50,10 @@ function Summary() {
 }
 
 function Contact() {
-
+    const [phoneInput, setPhoneInput] = useState('');
     return (
         <div className="w-full h-1/3 flex flex-col justify-end items-end">
-            <input type="text" placeholder="Phone" className="input input-bordered input-primary w-full max-w-xs m-2" />
+            <input type="text" placeholder="Phone" name="phone" onChange={e => (setPhoneInput(e.target.value))} className="input input-bordered input-primary w-full max-w-xs m-2" />
             <input type="text" placeholder="Email" className="input input-bordered input-primary w-full max-w-xs m-2" />
             <input type="text" placeholder="Portfolio" className="input input-bordered input-primary w-full max-w-xs m-2" />
             <input type="text" placeholder="Github" className="input input-bordered input-primary w-full max-w-xs m-2" />
