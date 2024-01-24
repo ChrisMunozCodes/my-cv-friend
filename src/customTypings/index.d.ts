@@ -1,7 +1,6 @@
 declare module 'myTypes' {
     type PdfType = {
-        nameInput?: any;
-        setNameInput?: any;
+        name: string;
         title: string;
         summary: string;
         job: string;

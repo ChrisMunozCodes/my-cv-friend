@@ -29,7 +29,7 @@ export default function Pdf(props: PdfProps) {
             <View style={tw("w-9/12")}>
               {/* Header */}
               <View style={tw("mb-6")}>
-                <Text style={tw("text-2xl font-bold p-0 m-0")}>{props.pdf.nameInput}</Text>
+                <Text style={tw("text-2xl font-bold p-0 m-0")}>{props.pdf.name}</Text>
                 <Text style={tw("text-sm text-blue p-0 m-0")}>Title</Text>
               </View>
 

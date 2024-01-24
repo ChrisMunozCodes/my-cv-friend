@@ -1,16 +1,20 @@
-import React from "react"
+import { PdfProps } from "myTypes";
+import React, { Dispatch, SetStateAction } from "react"
 import { useState } from "react"
-import { PdfProps } from 'myTypes';
 
-export default function Inputs(props: PdfProps) {
-    const [nameInput, setNameInput] = useState('');
 
-        props.pdf.setNameInput = setNameInput || ''
-        props.pdf.nameInput = nameInput || ''
+export default function Inputs({nameInput, setNameInput}:{nameInput:string, setNameInput:Dispatch<SetStateAction<string>>}) {
+
     return (
         <div className="min-w-full min-h-full flex">
             <section className="w-3/5 flex flex-col">
-            <Name pdf={props.pdf.nameInput} />
+            <input 
+            type="text" 
+            placeholder="Name" 
+            value={nameInput}
+            onChange={e => setNameInput(e.target.value)} 
+            className="input input-bordered input-primary w-full max-w-xs m-5" 
+            />
                 <Title />
                 <Summary />
             </section>
@@ -19,18 +23,6 @@ export default function Inputs(props: PdfProps) {
             </section>
         </div>
     )
-}
-
-function Name(props: PdfProps) {
-    return (
-        <input 
-            type="text" 
-            placeholder="Name" 
-            value={props.pdf.nameInput || ''}
-            onChange={e => props.pdf.setNameInput && props.pdf.setNameInput(e.target.value)} 
-            className="input input-bordered input-primary w-full max-w-xs m-5" 
-        />
-    );
 }
 
 function Title() {
