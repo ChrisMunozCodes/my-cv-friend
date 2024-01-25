@@ -14,9 +14,7 @@
 
 <p align="left" style="color: red;"> My CV Friend is a React Vite application that allows the users to input information and easily generate a resume in PDF format at a click of a button.</p>
 
-<p align="left">
-<a href="https://ibb.co/pd8gtVV"><img src="https://ibb.co/pd8gtVV" alt="pdf" border="0"></a><br />
-</p>
+<a href="https://ibb.co/pd8gtVV"><img src="https://i.ibb.co/JH4Nf66/Screenshot-2024-01-25-at-9-27-26-AM.png" alt="Screenshot-2024-01-25-at-9-27-26-AM" border="0"></a>
 
 ## 🚀 Technologies
 
