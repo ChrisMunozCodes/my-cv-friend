@@ -1,4 +1,3 @@
-import React from "react"
 import { PDFViewer } from '@react-pdf/renderer';
 import Pdf from "./Pdf";
 import { PdfProps } from "myTypes";
