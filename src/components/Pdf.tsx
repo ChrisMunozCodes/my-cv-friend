@@ -1,5 +1,4 @@
-import React from "react"
-import { Document, Page, Text, View, StyleSheet, Svg, Path } from "@react-pdf/renderer";
+import { Document, Page, Text, View } from "@react-pdf/renderer";
 import { createTw } from "react-pdf-tailwind";
 import { PdfProps } from 'myTypes';
 
