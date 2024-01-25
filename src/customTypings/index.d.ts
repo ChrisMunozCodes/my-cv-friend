@@ -6,6 +6,7 @@ declare module 'myTypes' {
         job: string;
         start: string;
         end: string;
+        desc: string;
         phone: string;
         email: string;
         portfolio: string;

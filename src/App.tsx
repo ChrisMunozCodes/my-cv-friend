@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './App.css'
 import Header from './components/Header';
-import Inputs from './components/Inputs';
 import DisplayPDF from './components/DisplayPDF';
 import capitalize from 'lodash/capitalize';
 import { PdfType } from 'myTypes';
@@ -18,6 +17,7 @@ function App() {
     job: "",
     start: "",
     end: "",
+    desc: "",
     phone: "",
     email: "",
     portfolio: "",
@@ -44,7 +44,7 @@ const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
             <div className="min-w-full min-h-full flex">
             <section className="w-3/5 flex flex-col">
                 {Object.entries(pdf)
-                    .slice(0, 3)
+                    .slice(0, 6)
                     .map(([key, value]) => (
                         <input
                             key={key}
@@ -59,7 +59,7 @@ const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
             </section>
             <section className="w-2/5">
                 {Object.entries(pdf)
-                    .slice(3)
+                    .slice(6)
                     .map(([key, value]) => (
                         <input
                             key={key}

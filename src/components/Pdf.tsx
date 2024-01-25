@@ -1,7 +1,6 @@
 import React from "react"
 import { Document, Page, Text, View, StyleSheet, Svg, Path } from "@react-pdf/renderer";
 import { createTw } from "react-pdf-tailwind";
-import Inputs from './Inputs';
 import { PdfProps } from 'myTypes';
 
 const tw = createTw({
@@ -30,24 +29,24 @@ export default function Pdf(props: PdfProps) {
               {/* Header */}
               <View style={tw("mb-6")}>
                 <Text style={tw("text-2xl font-bold p-0 m-0")}>{props.pdf.name}</Text>
-                <Text style={tw("text-sm text-blue p-0 m-0")}>Title</Text>
+                <Text style={tw("text-sm text-blue p-0 m-0")}>{props.pdf.title}</Text>
               </View>
 
               {/* Summary Section */}
               <View style={tw("mb-6")}>
                 <Text style={tw("text-2xl font-bold")}>Summary</Text>
                 <Text style={tw("text-sm")}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat molestias...
+                  {props.pdf.summary}
                 </Text>
               </View>
 
               {/* Experience Section */}
               <View style={tw("mb-6")}>
                 <Text style={tw("text-2xl font-bold")}>EXPERIENCE</Text>
-                <Text style={tw("text-lg pt-2")}>Job Title</Text>
-                <Text style={tw("text-sm pt-1")}>Start — End</Text>
+                <Text style={tw("text-lg pt-2")}>{props.pdf.job}</Text>
+                <Text style={tw("text-sm pt-1")}>{props.pdf.start} — {props.pdf.end}</Text>
                 <Text style={tw("text-sm")}>
-                  Desc
+                  {props.pdf.desc}
                 </Text>
               </View>
             </View>
@@ -57,19 +56,19 @@ export default function Pdf(props: PdfProps) {
               {/* Contact Section */}
               <View style={tw("mb-6")}>
                 <Text style={tw("text-2xl font-bold")}>Contact</Text>
-                <Text style={tw("text-sm")}>Phone</Text>
-                <Text style={tw("text-sm")}>Email</Text>
-                <Text style={tw("text-sm")}>Portfolio</Text>
-                <Text style={tw("text-sm")}>Github</Text>
-                <Text style={tw("text-sm")}>Linkedin</Text>
-                <Text style={tw("text-sm")}>Twitter</Text>
+                <Text style={tw("text-sm")}>{props.pdf.phone}</Text>
+                <Text style={tw("text-sm")}>{props.pdf.email}</Text>
+                <Text style={tw("text-sm")}>{props.pdf.portfolio}</Text>
+                <Text style={tw("text-sm")}>{props.pdf.github}</Text>
+                <Text style={tw("text-sm")}>{props.pdf.linkedin}</Text>
+                <Text style={tw("text-sm")}>{props.pdf.twitter}</Text>
               </View>
 
               {/* Skills Section */}
               <View style={tw("mb-6")}>
                 <Text style={tw("text-2xl font-bold")}>SKILLS</Text>
                 <View style={tw("flex flex-row flex-wrap")}>
-                  <Text style={tw("text-sm w-full")}>HTML</Text>
+                  <Text style={tw("text-sm w-full")}>{props.pdf.skills}</Text>
                   {/* More skills */}
                 </View>
               </View>
